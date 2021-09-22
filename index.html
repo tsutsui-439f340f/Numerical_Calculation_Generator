@@ -1,0 +1,238 @@
+<!doctype html>
+<html>
+<head>
+<title>算数問題</title>
+<meta charset="utf-8">
+<style>
+    @page {
+    size: A4 portrait;
+    margin: 0mm;
+}
+
+.header{   
+    padding-top: 80px;
+}
+.main{
+    text-align: center;
+}
+
+body{
+    font-family: "MS Pゴシック" ;
+}
+
+.title h3{
+font-size: 40px;
+letter-spacing: 5px;
+}
+.title p{
+    font-size: 20px;
+    letter-spacing: 5px;
+    }
+
+.title{
+    padding-bottom: 50px;
+}
+
+.main li{
+    list-style: none;
+}
+.main #t{
+    padding-bottom: 10px;
+    margin-right: 400px;
+}
+.main #t p{
+    font-size: 40px;
+    letter-spacing: 5px;
+    margin-bottom: 50px;
+}
+
+
+.fraction{
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+  }
+  .fraction_n,.fraction_d{
+    display: block;
+  }
+  .fraction_n{
+    border-bottom: 1px solid #333;
+  }
+</style>
+<script>
+let q_p=Math.floor( Math.random() * 9 );
+
+let num_data=[];
+
+
+
+function integer(n){
+   return Math.floor( Math.random() * n )+1;
+}
+function float(){
+    let a=(Math.floor( Math.random() *9 )+1);
+    console.log(a);
+    console.log(a/10);
+    return a/10;
+    
+}
+
+function check(){
+    if(q_p>=5){
+        let new_elements=[];
+        let text_element=document.getElementsByClassName('q');
+        let p_element=document.getElementsByClassName('p_tag'); 
+        
+        let text_element2=document.getElementsByClassName('comp1');
+        let text_element3=document.getElementsByClassName('comp2');
+        
+        
+        for(let i=0;i<20;i++){
+            new_elements[i]=document.createElement('span');
+            new_elements[i].textContent = num_data[i];
+        }
+          
+        
+        for(let i=0;i<5;i++){
+
+            p_element[i].style.margin="10px 0px 10px 0px";
+
+            text_element2[i].classList.add("fraction");
+
+            text_element[i].classList.add("fraction_n");
+            new_elements[i*4].className='fraction_d';
+            text_element[i].after(new_elements[i*4]);
+            
+            //記号
+            new_elements[i*4+1].className='mark';
+            text_element2[i].after(new_elements[i*4+1]);
+            
+
+            new_elements[i*4+2].className='fraction_n';
+            new_elements[i*4+3].className='fraction_d';
+
+            text_element3[i].classList.add("fraction");
+            text_element3[i].appendChild(new_elements[i*4+2]);
+            text_element3[i].appendChild(new_elements[i*4+3]);
+            
+        }
+
+        
+
+    }
+}
+
+function make_q(){
+    
+    if(q_p==0){
+        //せ*せ
+        document.write((Math.floor( Math.random() *99)+2)+" × "+(Math.floor( Math.random() *99)+2));
+
+    }else if(q_p==1){
+        //せ*小
+        document.write((integer(9)+float())+" × "+(Math.floor( Math.random() *9)+2));
+
+    }
+    else if(q_p==2){
+        //小*小
+        
+        document.write((integer(9)+float())+" × "+(integer(9)+float()));
+
+    }
+    else if(q_p==3){
+        //せ/せ
+        let a=integer(98);
+        let b=Math.floor( Math.random() *(8)+2);
+        document.write(a+" ÷ "+b);
+
+    }
+    else if(q_p==4){
+        //小/せ
+        let a=integer(98);
+        let b=Math.floor( Math.random() *(8)+2);
+        document.write(a+float()+" ÷ "+b);
+
+    }
+    else if(q_p==5){
+        //同+
+
+        let denominator=Math.floor(Math.random() *7+2);
+        document.write(Math.floor(Math.random() *9+1));
+        
+        num_data.push(denominator);
+        num_data.push("+");
+        num_data.push(Math.floor(Math.random() *9+1));
+        num_data.push(denominator);
+        
+    }
+    else if(q_p==6){
+        //同-
+        let denominator=Math.floor(Math.random() *7+2);
+        document.write(Math.floor(Math.random() *9+1));
+        
+        num_data.push(denominator);
+        num_data.push("-");
+        num_data.push(Math.floor(Math.random() *9+1));
+        num_data.push(denominator);
+
+    }
+    else if(q_p==7){
+        //異+
+        document.write(Math.floor(Math.random() *9+1));
+        
+        num_data.push(Math.floor(Math.random() *7+2));
+        num_data.push("+");
+        num_data.push(Math.floor(Math.random() *9+1));
+        num_data.push(Math.floor(Math.random() *7+2));
+        
+
+    }
+    else if(q_p==8){
+        //異-
+        document.write(Math.floor(Math.random() *9+1));
+        
+        num_data.push(Math.floor(Math.random() *7+2));
+        num_data.push("-");
+        num_data.push(Math.floor(Math.random() *9+1));
+        num_data.push(Math.floor(Math.random() *7+2));
+    }
+    
+}
+
+</script>
+</head>
+
+<body>
+
+<section class="page">
+<div class="header">
+</div>
+<div>
+<div class="main">　
+<div class="title">
+<h3>9月の問題</h3>
+<p>以下の問題を解きなさい</p>
+<p>割算は小数第一位まで求めて、のこりはあまりにしなさい</p>
+<p>分数の計算は最後約分チェックまでしなさい</p>
+</div>
+
+<div id="t">
+    
+    <ul>
+        <li><p class="p_tag"><span class="comp1"><span class="q"><script>make_q()</script></span></span><span class="comp2"></span> =</p></li>
+        <li><p class="p_tag"><span class="comp1"><span class="q"><script>make_q()</script></span></span><span class="comp2"></span> =</p></li>
+        <li><p class="p_tag"><span class="comp1"><span class="q"><script>make_q()</script></span></span><span class="comp2"></span> =</p></li>
+        <li><p class="p_tag"><span class="comp1"><span class="q"><script>make_q()</script></span></span><span class="comp2"></span> =</p></li>
+        <!-- <li><p class="p_tag"><span class="comp1"><span class="q"><script>make_q()</script></span></span><span class="comp2"></span> =</p></li> -->
+    </ul>
+</div>
+</div>
+
+<script>check()</script>
+
+</section>
+</body>
+</html>
