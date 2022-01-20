@@ -17,10 +17,14 @@ windows環境には現在対応していません。
 
 ## 準備
 ```
+環境　python 3.8
+
 sudo apt update
-sudo apt 
+sudo apt install -y python3.8
+sudo apt install python3.8-venv
 ```
 ## 使い方
+```numerical-calculation_PDF/```で
 
 ## サンプル
 ![sample](./sample.JPG)
