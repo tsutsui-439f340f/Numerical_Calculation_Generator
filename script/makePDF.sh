@@ -2,7 +2,7 @@
 
 if [[ $# -lt 1 ]] ;then
 	echo "Specified value of the argument is invalid"
-	echo "USAGE: $0 (result_file) "
+	echo "USAGE: $0 (result_file) (n_sample)"
 	exit 1
 fi
 
@@ -17,6 +17,13 @@ if [ -d $1 ]; then
 	done
 	mv $1 ${1}.${CNT}
 fi
+
+if [[ $# -eq 2 ]] ;then
+	N_SAMPLE=10
+else
+	N_SAMPLE=$2
+fi
+
 
 mkdir $1
 cd $1
@@ -38,7 +45,7 @@ pip freeze
 
 pwd
 
-python3 src/HTML2PDF.py data/mondai.html $SAVE_DIR
-python3 src/ConnectPDF.py $SAVE_DIR
+python3 src/HTML2PDF.py data/mondai.html $SAVE_DIR $N_SAMPLE
+python3 src/ConnectPDF.py $SAVE_DIR 
 rm -r virtualenv
 echo END
