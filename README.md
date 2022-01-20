@@ -16,6 +16,10 @@
 windows環境には現在対応していません。
 
 ## 準備
+```
+sudo apt update
+sudo apt 
+```
 ## 使い方
 
 ## サンプル
