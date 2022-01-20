@@ -17,7 +17,7 @@ windows環境には現在対応していません。
 
 ## 準備
 ```
-環境　python 3.8
+python 3.8必須
 
 sudo apt update
 sudo apt install -y python3.8
