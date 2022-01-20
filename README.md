@@ -24,7 +24,8 @@ sudo apt install -y python3.8
 sudo apt install python3.8-venv
 ```
 ## 使い方
-```numerical-calculation_PDF/```で```bash script/makePDF.sh () () ()```
+一度に10枚の作問を以下のコマンドで行うことができます。
+```numerical-calculation_PDF/```で```bash script/makePDF.sh (任意の出力フォルダ名)```を実行
 
 ## サンプル
 ![sample](./sample.JPG)
