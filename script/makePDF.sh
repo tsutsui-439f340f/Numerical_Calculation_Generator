@@ -18,9 +18,7 @@ if [ -d $1 ]; then
 	mv $1 ${1}.${CNT}
 fi
 
-if [[ $# -eq 2 ]] ;then
-	N_SAMPLE=10
-else
+if [[ -n $2 ]] ;then
 	N_SAMPLE=$2
 fi
 
