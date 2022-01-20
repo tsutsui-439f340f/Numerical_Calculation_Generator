@@ -23,10 +23,6 @@ cd $1
 SAVE_DIR=`pwd`
 cd $DIR
 
-#sudo apt update
-echo "install python-venv"
-#sudo apt install python3.8-venv
-
 #make venv
 python3 -m venv virtualenv
 # venv activate
@@ -39,12 +35,6 @@ pip install PyPDF2
 pip install webdriver_manager
 echo "install package:"
 pip freeze
-
-
-#wget https://chromedriver.storage.googleapis.com/96.0.4664.18/chromedriver_linux64.zip
-#unzip chromedriver_linux64.zip
-#rm chromedriver_linux64.zip
-#mv chromedriver ../utils/
 
 pwd
 
