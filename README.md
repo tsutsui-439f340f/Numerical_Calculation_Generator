@@ -24,7 +24,7 @@ sudo apt install -y python3.8
 sudo apt install python3.8-venv
 ```
 ## 使い方
-```numerical-calculation_PDF/```で
+```numerical-calculation_PDF/```で```bash script/makePDF.sh () () ()```
 
 ## サンプル
 ![sample](./sample.JPG)
