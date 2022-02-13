@@ -24,11 +24,11 @@ sudo apt install -y python3.8
 sudo apt install python3.8-venv
 ```
 ## 使い方
-以下のコマンドでは一度に10枚の作問を行うことができます。
+以下のコマンドでは一度に10枚分のプリントを1枚のpdfに結合します。
 ```Numerical_Calculation_Generator/```で
 ```bash script/makePDF.sh (任意の出力フォルダ名)```を実行
 
-任意の枚数を作問する際は
+任意の枚数のプリントを1枚のpdfに結合する場合は
 ```Numerical_Calculation_Generator/```
 で```bash script/makePDF.sh (任意の出力フォルダ名) (枚数)```を実行
 ## サンプル
